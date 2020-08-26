@@ -113,3 +113,122 @@ header .categories a.active {
   width: 100%;
   height: 100%;
 }
+
+/*Overlay*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay img {
+  max-width: 100%;
+}
+
+.overlay .description {
+  display: block;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 10px;
+  max-width: 50%;
+}
+
+.overlay button {
+  max-width: 100%;
+}
+
+.container-img {
+  position: relative;
+}
+
+.container-img button {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  background: none;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+footer .social-networks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+footer .social-networks a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+  border-radius: 100px;
+}
+
+footer .social-networks a.twitter {
+  background-color: #1da1f2;
+}
+footer .social-networks a.facebook {
+  background-color: #3b5998;
+}
+footer .social-networks a.instagram {
+  background-color: #c13584;
+}
+
+footer .social-networks a i {
+  font-size: 20px;
+  line-height: 60px;
+}
+
+footer .container-icon:hover a {
+  animation: icon 0.5s ease;
+}
+
+@keyframes icon {
+  from {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+footer .created-by {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/*Media queries*/
+@media screen and (max-width: 700px) {
+  .grid .item {
+    width: calc(50% - 20px);
+  }
+
+  header .item {
+    width: calc(50% - 20px);
+  }
+}

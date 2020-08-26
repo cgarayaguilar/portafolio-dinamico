@@ -36,3 +36,25 @@ document.querySelector('#search-bar').addEventListener('input', event => {
 
   grid.filter(item => item.getElement().dataset.label.includes(searchTerm))
 })
+
+//Agregamos listener para las imagenes
+const overlay = document.getElementById('overlay')
+
+document.querySelectorAll('.grid .item img').forEach(element => {
+  element.addEventListener('click', () => {
+    const path = element.getAttribute('src')
+    const description = element.parentNode.parentNode.dataset.description
+
+    overlay.classList.add('active')
+    document.querySelector('#overlay img').src = path
+    document.querySelector('#overlay .description').innerHTML = description
+  })
+})
+
+document.querySelector('#btn-close-popup').addEventListener('click', () => {
+  overlay.classList.remove('active')
+})
+
+overlay.addEventListener('click', event => {
+  event.target.id === 'overlay' && overlay.classList.remove('active')
+})
